@@ -23,7 +23,7 @@ def get_foods(request):
     end_index = content_per_page + start_index - 1
 
     foods = Food.objects.all()[start_index:end_index]
-    data = FoodSerializer(data=foods).data
+    data = FoodSerializer(foods, many=True).data
 
     return Response(data)
 
