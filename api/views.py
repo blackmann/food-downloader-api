@@ -16,7 +16,7 @@ class FoodSerializer(ModelSerializer):
 
 @api_view(['GET'])
 def get_foods(request):
-    page = request.query_params.get('page', 0)
+    page = int(request.query_params.get('page', '0'))
     content_per_page = 20
 
     start_index = (page * content_per_page)
