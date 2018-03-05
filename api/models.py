@@ -12,6 +12,7 @@ class Food(models.Model):
     popularity = models.IntegerField(default=0)
     estimated_time = models.IntegerField() # time in seconds
     utensils = models.TextField(blank=True)
+    introduction = models.TextField(default="Remember to subscribe to Telande World on Youtube")
 
     def __str__(self):
         return self.name
